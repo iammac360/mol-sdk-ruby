@@ -1,4 +1,31 @@
+*.gem
+*.rbc
+.bundle
+.config
+.yardoc
 Gemfile.lock
+InstalledFiles
+.yardoc
+_yardoc
+coverage
 doc/
-pkg/
-vendor/cache/*.gem
+lib/bundler/man
+pkg
+rdoc
+spec/reports
+test/tmp
+test/version_tmp
+tmp
+.ruby-version
+.rbenv-version
+.ruby-gemset
+.rvmrc
+.rbenv-gemsets
+vendor
+bin
+
+## MAC OS
+.DS_Store
+
+## VIM
+*.swp
