@@ -9,7 +9,7 @@ module MOL
     end
 
     def digest
-      Digest::MD5.hexdigest(@sorted_hash.values.join + MOL.config.secret)
+      Digest::MD5.hexdigest(sorted_hash.values.join + MOL.config.secret)
     end
   end
 end
