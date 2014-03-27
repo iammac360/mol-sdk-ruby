@@ -15,6 +15,7 @@ $: << File.join(File.dirname(File.dirname(__FILE__)), "lib")
 
 require 'rspec'
 require 'shoulda-matchers'
+require 'webmock/rspec'
 require 'debugger'
 require 'mol/version'
 
