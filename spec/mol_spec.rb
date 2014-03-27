@@ -19,7 +19,7 @@ describe MOL do
     let(:currency) { "PHP" }
 
     before do
-      mol_conf = MOL.configure do |config|
+      MOL.configure do |config|
         config.code = code
         config.secret = secret
         config.currency = currency
