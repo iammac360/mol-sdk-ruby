@@ -120,6 +120,7 @@ describe MOL::Client do
       end
 
       let(:client) { MOL::Client.new }
+      let(:json) { JSON.parse response.body }
 
       before do
         expect_any_instance_of(Signature).to receive(:digest).and_return(mock_signature)
@@ -130,12 +131,18 @@ describe MOL::Client do
 
       subject(:response) { client.invoke_payment_request options }
       
+      it "should return a HTTParty::Response object" do
+        #expect(response).to be_a HTTParty::Response
+        response.class.should eq HTTParty::Response
+      end
+
       specify { expect(response.code).to eq 200 }
-      specify {
+
+      specify do
         %w{applicationCode referenceId version amount currencyCode paymentId paymentUrl signature}.each do |key|
-          expect(JSON.parse(response.body).include?(key)).to be true
+          expect(json.include?(key)).to be true
         end
-      }
+      end
     end
   end
 end
