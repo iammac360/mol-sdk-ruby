@@ -4,7 +4,7 @@ require 'mol/config'
 describe MOL::Config do
 
   describe "#initialize" do
-    it "initializes the application" do
+    it "should initialize the application" do
       mol = MOL::Config.new
       mol.code.should be
       mol.secret.should be
@@ -16,7 +16,7 @@ describe MOL::Config do
 
   describe "#payout_url" do
     context "when sandbox_mode is true" do
-      it "returns the production url" do
+      it "should return the production url" do
         mol = MOL::Config.new
         mol.sandbox_mode = false
         mol.payout_url.should eq "https://api.mol.com/payout/"
@@ -24,7 +24,7 @@ describe MOL::Config do
     end
 
     context "when sandbox_mode  is false" do
-      it "returns the sandbox url" do
+      it "should return the sandbox url" do
         mol = MOL::Config.new
         mol.sandbox_mode = true
         mol.payout_url.should eq "https://sandbox.api.mol.com/payout/"
