@@ -2,6 +2,7 @@ require 'mol/version'
 
 module MOL
   autoload :Config, 'mol/config'
+  autoload :Client, 'mol/client'
 
   class << self
     attr_accessor :config
