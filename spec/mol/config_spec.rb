@@ -19,7 +19,7 @@ describe MOL::Config do
       it "should return the production url" do
         mol = MOL::Config.new
         mol.sandbox_mode = false
-        mol.payout_url.should eq "https://api.mol.com/payout/"
+        mol.payout_url.should eq "https://api.mol.com/payout"
       end
     end
 
@@ -27,7 +27,7 @@ describe MOL::Config do
       it "should return the sandbox url" do
         mol = MOL::Config.new
         mol.sandbox_mode = true
-        mol.payout_url.should eq "https://sandbox.api.mol.com/payout/"
+        mol.payout_url.should eq "https://sandbox.api.mol.com/payout"
       end
     end
   end

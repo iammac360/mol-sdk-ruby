@@ -35,6 +35,6 @@ describe MOL do
     specify { expect(subject.secret).to eq secret }
     specify { expect(subject.app_name).to eq app_name }
     specify { expect(subject.currency).to eq currency}
-    specify { expect(subject.payout_url).to eql "https://sandbox.api.mol.com/payout/" }
+    specify { expect(subject.payout_url).to eql "https://sandbox.api.mol.com/payout" }
   end
 end
