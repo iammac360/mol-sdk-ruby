@@ -12,7 +12,7 @@ module MOL
     end
 
     def payout_url
-      sandbox_mode ? "https://sandbox.api.mol.com/payout/" : "https://api.mol.com/payout/"
+      sandbox_mode ? "https://sandbox.api.mol.com/payout" : "https://api.mol.com/payout"
     end
   end
 end
