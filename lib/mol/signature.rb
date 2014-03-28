@@ -11,5 +11,9 @@ module MOL
     def digest
       Digest::MD5.hexdigest(sorted_hash.values.join + MOL.config.secret)
     end
+
+    def validate_digest(digest)
+      self.digest === digest
+    end
   end
 end

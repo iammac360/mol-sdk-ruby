@@ -47,4 +47,18 @@ describe MOL::Signature do
       expect(subject.digest).to eq digest
     end
   end
+
+  describe "#validate_digest" do
+    subject { MOL::Signature.new(params) }
+    let(:valid_digest) { Digest::MD5.hexdigest(sorted_hash.values.join + MOL.config.secret) }
+    let(:invalid_digest) { "adsf" }
+
+    context "when digest passed is valid" do
+      specify { expect(subject.validate_digest(valid_digest)).to be true }
+    end
+
+    context "when digest passed is invalid" do
+      specify { expect(subject.validate_digest(invalid_digest)).to be false }
+    end
+  end
 end
