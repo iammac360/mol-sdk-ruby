@@ -6,6 +6,24 @@ describe MOL do
     expect(subject.const_get('VERSION')).to_not be_empty
   end
 
+  context "when MOL::Config is called" do
+    specify { expect(MOL::Config).to eq MOL::Config }
+    specify { expect { MOL::Config }.not_to raise_error }
+    specify { expect(MOL::Config).to be_truthy }
+  end
+
+  context "when MOL::Client is called" do
+    specify { expect(MOL::Client).to eq MOL::Client }
+    specify { expect { MOL::Client }.not_to raise_error }
+    specify { expect(MOL::Client).to be_truthy }
+  end
+
+  context "when MOL::Signature is called" do
+    specify { expect(MOL::Signature).to eq MOL::Signature }
+    specify { expect { MOL::Signature }.not_to raise_error }
+    specify { expect(MOL::Signature).to be_truthy }
+  end
+
   describe ".config" do
     specify { expect(MOL.config).to be_a MOL::Config }
   end
