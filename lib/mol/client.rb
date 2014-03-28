@@ -17,7 +17,7 @@ module MOL
     def invoke_payment_request(options)
       options[:application_code] ||= @application_code
       options[:currency_code] ||= @currency
-      options[:signature] = Signature.new(options).digest
+      options[:signature] = ::MOL::Signature.new(options).digest
       params =  {}
       options.each { |k,v| params[k.to_s.camelize(:lower)] = v }
       HTTParty.post("#{::MOL.config.payout_url}/payments", body: params)
