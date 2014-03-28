@@ -53,6 +53,8 @@ describe MOL::Signature do
     let(:valid_digest) { Digest::MD5.hexdigest(sorted_hash.values.join + MOL.config.secret) }
     let(:invalid_digest) { "adsf" }
 
+    specify { expect { subject.validate_digest }.to raise_error(ArgumentError) }
+
     context "when digest passed is valid" do
       specify { expect(subject.validate_digest(valid_digest)).to be true }
     end
