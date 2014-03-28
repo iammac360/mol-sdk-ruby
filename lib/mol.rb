@@ -3,6 +3,7 @@ require 'mol/version'
 module MOL
   autoload :Config, 'mol/config'
   autoload :Client, 'mol/client'
+  autoload :Signature, 'mol/signature'
 
   class << self
     attr_accessor :config
